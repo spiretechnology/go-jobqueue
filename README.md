@@ -1,6 +1,6 @@
 # go-jobqueue
 
-A multi-threaded polling job queue for Go.
+Concurrent, polling task execution queue in Go.
 
 ## Example Usage
 
