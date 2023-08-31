@@ -66,7 +66,7 @@ type jobInfo[T any, ID comparable] struct {
 func (m *manager[T, ID]) Run(ctx context.Context) error {
 	// Create channels for the workers to notify that they are ready for a job, and for
 	// the manager to send the workers jobs.
-	chanSlotReady := make(chan struct{})
+	chanSlotReady := make(chan struct{}, m.options.Workers)
 	chanJobs := make(chan jobInfo[T, ID])
 
 	// Start the workers
